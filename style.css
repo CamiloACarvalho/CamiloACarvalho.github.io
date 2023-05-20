@@ -1,0 +1,206 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap'); /*importando lestrar do https://fonts.google.com/?sort=popularity */
+
+/*O * no íncio é para resetar quaisquer configurações pré determinadas. Logo na sequência já defini qual será a nova configuração */
+*
+{
+    margin: 0; /*zerei a margem*/
+
+    padding: 0; /*sem espaço embaixo*/
+
+    box-sizing: border-box;
+}
+
+.game-board /*aqui estamos trazendo a classe criada no html */
+{
+    width: 100%; /*definindo a largura */
+
+    height: 500px; /*definindo a altura */
+
+    border-bottom: 20px solid #09bb18; /*Espessura da borda, o tipo da borda e a cor da borda. Cor retirada do site: https://www.w3schools.com/cssref/css_colors.asp*/
+
+    margin: 0 auto; /*Definindo a margem da borda*/
+
+    position: relative; /*porque as imagens do jogo vai respeitar a borda que eu desenhei*/
+
+    overflow: hidden; /*por que disso? Simplesmente por vamos fazer o tubo andar da direita pra esquerda, saindo do right 0% e aindo até right 100|%. Porém quando atinge 100% ele sai da borda, e esse comando "overflow=hidden" não deixa que ele apareça quando sair da borda*/
+
+    background: linear-gradient(#87CEEB,#E0F6FF);
+
+    margin-bottom: 30px;
+}
+
+/*.tubo /*Classe do tubo pra configurar a imagem*/
+/*{
+    position: absolute; /*como terá várias imagens, para que uma imagem não interfira na outra, colocamos esse campo absolut*/
+
+    /*bottom: 0; /*para definir a imagem na base da borda*/
+
+    /*width: 80px; /*como minha imagem era muito grande, utilizei essa função para diminuir ela de tamanho*/
+
+    /*right: -80px; /*o tubo vai começar da direita antes borda, por isso o *80px, e vai se deslocar até a esquerda da borda, atingindo 100%*/
+
+    /*left: 126px; /*Definindo o limite para quando o mário enconstar no tubo, o jogo acabar*/
+
+    /*animation: move-tubo 1.7s infinite linear; /*como definimos a animação no bloco abaixo, aqui chamamos esse bloco e definimos o tempo que essa animação vai levar para chegar do canto direito ao canto esquerdo. O código "infinite" é para que o tubo não pare de passar na tela. Outro código importante é o linear, que deixa a velocidade do objeto constante na tela*/
+/*}*/
+
+.base /*base do canhão*/
+{
+    position: absolute; /*como terá várias imagens, para que uma imagem não interfira na outra, colocamos esse campo absolut*/
+
+    bottom: 0; /*para definir a imagem na base da borda*/
+
+    width: 100px; /*como minha imagem era muito grande, utilizei essa função para diminuir ela de tamanho*/
+
+    right: 0; /*Para deixar ela fixa no canto direito da tela*/
+}
+
+.bala /*bala que vai atingir o mário*/
+{
+    position: absolute; /*como terá várias imagens, para que uma imagem não interfira na outra, colocamos esse campo absolut*/
+
+    bottom: 48px; /*para definir a altura da imagem em realção a borda criada*/
+
+    width: 80px; /*como minha imagem era muito grande, utilizei essa função para diminuir ela de tamanho*/
+
+    right: -80px; /*a bala vai começar da direita antes borda, por isso o -80px, e vai se deslocar até a esquerda da borda, atingindo 100%*/
+
+    /*left: 80px; /*Definindo o limite para quando o mário enconstar na bala, o jogo acabar*/
+
+    animation: move-bala 1.5s infinite linear; /*como definimos a animação no bloco abaixo, aqui chamamos esse bloco e definimos o tempo que essa animação vai levar para chegar do canto direito ao canto esquerdo. O código "infinite" é para que o tubo não pare de passar na tela. Outro código importante é o linear, que deixa a velocidade do objeto constante na tela*/
+}
+  
+.mario
+{
+    width: 150px; /*Definindo o tamanho do mário*/
+
+    position: absolute; /*como terá várias imagens, para que uma imagem não interfira na outra, colocamos esse campo absolut*/
+
+    bottom: 0px; /*para definir a imagem na base da borda*/
+}
+
+.pular
+{
+    animation: pular 700ms ease-out;
+}
+
+.nuvem
+{
+    position: absolute; /*Para manter as posições das nuvens para não atrapalhar as outras imagens*/
+
+    width: 350px; /*Tamanho das nuvens*/
+
+    animation: mover-nuvem 20s infinite linear; /*animação para mover a nuvem. O tempo de duração dessa animação é de 20s e foi programada para ficar passando sempre, por isso infinite. O modo linear é pra deixar a velocidade constante */
+
+}
+
+@keyframes mover-nuvem /*Amnimação para mover as nuvens*/
+{
+    from /*de onde vai começar a animação*/
+    {
+        right: -350px; /*vai começar a animação no -350px pra que as nuvens surjam da linha da tela*/
+    }
+    to /*e vai terminar a animação no right 100%*/
+    {
+        right: 100%;
+    }
+
+}
+
+@keyframes move-bala /*Desenvolver a animação do tudo*/
+{
+    from /*de onde vai começar a animação, ou seja, right -80px */
+    {
+        right: 0;
+    }
+    to /*e vai terminar a animação no right 100%*/
+    {
+        right: 100%;
+    }
+}
+
+@keyframes pular /*Essa animação vai fazer com o mário salte o tupo. Basicamente vamos alterar o comando botton, indo de 0 até algum valor que ele ultrapasse o tubo*/
+{
+    0% /*no inicio da animação, 0% o botton vai ser 0*/
+    {
+        bottom: 0;
+    }
+
+    45% /*nesse ponto da animação ele vai permanecer no alto, é como se fosse uma desaceleração da animação*/
+    {
+        bottom: 120px;
+    }
+
+    50% /*quando atingir 50% da animação, o botton vai para 120px*/
+    {
+        bottom: 120px;
+    }
+
+    55% /*nesse ponto da animação ele vai permanecer no alto, é como se fosse uma desaceleração da animação*/
+    {
+        bottom: 120px;
+    }
+
+    100% /*e quando terminar a animação, o botton vai voltar a ser zero*/
+    {
+        bottom: 0;
+    }
+}
+
+.fim /*gif de game over*/
+{
+    width: 475px; /*Tamanho da tela de game over*/
+
+    position: inherit; /*Essa posição é para ficar a frente de todos os outros objetos*/
+
+    display: block; /*para aparecer o gif em formato de bloco*/
+
+    margin-left: auto; /*para centralizar o gif*/
+
+    margin-right: auto; /*para centralizar o gif*/
+
+    display: none; /*para ocutar o gif*/
+}
+
+.rodape /*Pra alinhar os itens abaixo do jogo*/
+{
+    align-items: center;
+}
+
+.reiniciargame /*botão para reiniciar o jogo*/
+{
+    padding: 10px; /*tamanho do botão*/
+
+    font-family: Open Sans; /*fonte do escrito do botão*/
+
+    font-size: 20px; /*tamanho da fonte do escrito do botão*/
+
+    font-weight: 400; /*espessura da fonte, quanto maior esse valor, mais negrito a letra fica*/
+
+    margin-left: auto; /*para centralizar o botão*/
+
+    margin-right: auto; /*para centralizar o botão*/
+   
+    border-color: #499335; /*cor da borda do botão*/
+
+    color: rgb(73, 70, 70); /*cor da fonte*/
+
+    box-shadow: 0 0 40px 40px #7cd884 inset, 0 0 0 0 #a6d390; /*cor da sombra do botão*/
+    
+    -webkit-transition: all 150ms ease-in-out;
+   
+    transition: all 150ms ease-in-out;
+
+    user-select: none; /*PARA NÃO SELECIONAR O ESCRITO DO BOTÃO*/
+    
+    cursor: pointer; /*MUDANDO CO CURSO DO MOUSE PARA "MÃOZINHA"*/
+
+    display: none;/*ocultei o botão de reiniciar para aparecer somente quando der game over*/
+   
+  }
+
+  .reiniciargame:hover 
+  {
+    box-shadow: 0 0 10px 0 #89d68f inset, 0 0 10px 4px #ade392; /*efeito do botão*/
+  }
