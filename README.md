@@ -16,7 +16,7 @@ Este jogo foi desenvolvido utilizando as seguintes tecnologias:
 
 ## Capturas de tela
 
-![image](https://github.com/CamiloACarvalho/CamiloACarvalho.github.io/assets/111397870/1fa63f53-c3b0-4c75-b756-055fba8ab36a)
+![image](https://github.com/CamiloACarvalho/CamiloACarvalho.github.io/assets/111397870/ca5d69dd-6b8b-4eca-bb49-c7d920f13fcc)
 
 ## Jogue Agora
 
