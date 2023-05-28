@@ -16,7 +16,7 @@ Este jogo foi desenvolvido utilizando as seguintes tecnologias:
 
 ## Capturas de tela
 
-![image](https://github.com/CamiloACarvalho/CamiloACarvalho.github.io/assets/111397870/ca5d69dd-6b8b-4eca-bb49-c7d920f13fcc)
+![ezgif com-crop](https://github.com/CamiloACarvalho/CamiloACarvalho.github.io/assets/111397870/edc76bc3-3b9a-44d7-8780-040a7b00bb5e)
 
 ## Jogue Agora
 
@@ -24,7 +24,7 @@ Para jogar o jogo, acesse [este link](https://camiloacarvalho.github.io/) e divi
 
 ## Créditos
 
-- [Vídeo tutorial no YouTube]([https://www.youtube.com/exemplo](https://camiloacarvalho.github.io/)) - Agradeço ao autor deste vídeo por compartilhar conhecimentos sobre o desenvolvimento desse tipo de jogo.
+- [Vídeo tutorial no YouTube] https://www.youtube.com/watch?v=r9buAwVBDhA - Agradeço ao autor deste vídeo por compartilhar conhecimentos sobre o desenvolvimento desse tipo de jogo.
 - Imagens do personagem Mário - O personagem Mário é uma propriedade da Nintendo. A utilização das imagens é meramente ilustrativa e sem fins comerciais.
 
 ## Contribuição
