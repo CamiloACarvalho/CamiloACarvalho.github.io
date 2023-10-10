@@ -59,21 +59,7 @@ const loop = setInterval(() => {
         reiniciargame.style.display = 'block'; //aparecer o botão para reiniciar o jogo quando o mario perder. O botão será surgirá, já foi oculto no style.css
 
         clearInterval(loop); //para zerar o loop
-    }
-    /* else //esperança de que um dia isso ainda vire um contador de ponto. Não estou sabendo criar uma variável pra receber o valor que o java vai acumular
-    {
-        placar = placar ++;
-
-            if(placar >= record)
-            {
-                record = placar;
-            }
-            else
-            {
-                return placar;
-            }
-    } */
-    
+    }   
 }, 10);//criamos uma função anônima, para ficar rodando no intervalo de 10ms
 
 
