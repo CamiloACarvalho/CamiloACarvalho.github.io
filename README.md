@@ -20,7 +20,7 @@ Este jogo foi desenvolvido utilizando as seguintes tecnologias:
 
 ## Jogue Agora
 
-Para jogar o jogo, acesse [este link]( cac_jump-mario.surge.sh) e divirta-se!
+Para jogar o jogo, acesse [este link](cac_jump-mario.surge.sh) e divirta-se!
 
 ## Créditos
 
